@@ -1,0 +1,45 @@
+{
+  "$schema": "https://turborepo.dev/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "ui": "tui",
+  "envMode": "loose",
+  "tasks": {
+    "build": {
+      "description": "Compile TypeScript, bundle apps, and generate ORM/email artifacts",
+      "dependsOn": ["^build", "test"],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        "**/generated/**",
+        "storybook-static/**",
+        ".react-email/**"
+      ]
+    },
+    "test": {
+      "description": "Run unit and integration tests for each package",
+      "dependsOn": ["^test"]
+    },
+    "analyze": {
+      "description": "Run bundle analysis on Next.js apps",
+      "dependsOn": ["^analyze"]
+    },
+    "dev": {
+      "description": "Start development servers with hot reload",
+      "cache": false,
+      "persistent": true
+    },
+    "translate": {
+      "description": "Extract and compile i18n translation strings",
+      "dependsOn": ["^translate"],
+      "cache": false
+    },
+    "clean": {
+      "description": "Remove build artifacts and generated files",
+      "cache": false
+    },
+    "//#clean": {
+      "description": "Clean root-level build artifacts",
+      "cache": false
+    }
+  }
+}
