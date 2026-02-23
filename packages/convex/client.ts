@@ -6,4 +6,6 @@ export {
   useConvex,
 } from "convex/react";
 export { ConvexProviderWithClerk } from "convex/react-clerk";
-export { api } from "./convex/_generated/api";
+export { api } from "./convex/functions/_generated/api";
+
+export { useCRPC, useCRPCClient } from "./crpc";

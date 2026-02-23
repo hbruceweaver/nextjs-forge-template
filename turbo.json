@@ -33,6 +33,10 @@
       "dependsOn": ["^translate"],
       "cache": false
     },
+    "typecheck": {
+      "description": "Run codegen (where needed) then type-check",
+      "dependsOn": ["^typecheck"]
+    },
     "clean": {
       "description": "Remove build artifacts and generated files",
       "cache": false

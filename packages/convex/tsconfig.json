@@ -1,7 +1,14 @@
 {
   "extends": "@repo/typescript-config/nextjs.json",
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": ".",
+    "declaration": false,
+    "declarationMap": false,
+    "skipLibCheck": true,
+    "strictFunctionTypes": false,
+    "paths": {
+      "@convex/*": ["./convex/functions/_generated/*", "./convex/shared/*"]
+    }
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

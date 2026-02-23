@@ -5,19 +5,27 @@
   "main": "./index.ts",
   "types": "./index.ts",
   "scripts": {
-    "dev": "convex dev",
-    "build": "test -n \"$CONVEX_DEPLOYMENT\" && convex codegen --typecheck disable || echo 'Skipping convex codegen (no CONVEX_DEPLOYMENT)'",
+    "dev": "better-convex dev",
+    "build": "test -n \"$CONVEX_DEPLOYMENT\" && better-convex codegen || echo 'Skipping (no CONVEX_DEPLOYMENT)'",
+    "codegen": "better-convex codegen",
     "clean": "git clean -xdf .cache .turbo node_modules",
-    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+    "typecheck": "better-convex codegen && tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.13.8",
+    "@tanstack/react-query": "^5.80.0",
+    "better-convex": "latest",
     "convex": "^1.31.7",
     "server-only": "^0.0.1",
     "zod": "^4.1.13"
   },
+  "peerDependencies": {
+    "@clerk/nextjs": "*",
+    "react": "*"
+  },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
+    "@types/react": "^19.0.0",
     "typescript": "^5.9.3"
   }
 }

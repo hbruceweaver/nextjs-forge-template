@@ -1,3 +1,14 @@
 packages:
   - "apps/*"
   - "packages/*"
+
+onlyBuiltDependencies:
+  - "@clerk/shared"
+  - "@prisma/engines"
+  - "@sentry/cli"
+  - bufferutil
+  - core-js
+  - core-js-pure
+  - esbuild
+  - prisma
+  - sharp

@@ -268,7 +268,8 @@ $RECYCLE.BIN/
 packages/database/generated
 
 # Convex
-packages/convex/convex/_generated
+packages/convex/convex/functions/_generated
+packages/convex/convex/shared/meta.ts
 
 # react.email
 .react-email
@@ -280,3 +281,8 @@ packages/convex/convex/_generated
 .contentlayer
 .content-collections
 .source
+
+# Docs cache (fetched by fetch-docs skill)
+.llms-txt
+# next-agents-md
+.next-docs/
